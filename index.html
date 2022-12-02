@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/style2.css">
+    <link rel="stylesheet" href="src/footerstyle.css">
+    <title>Movieapp</title>
+</head>
+
+<body>
+    <!-- ჰედერი-გვერდების სახელწოდების მიხედვით ნავიგაციით და ჰამბურგერი -->
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img decoding="async" src="src/img/cinema.jpg" alt="Logo Image">
+            </div>
+            <div class="hamburger">
+                <div class="bars1"></div>
+                <div class="bars2"></div>
+                <div class="bars3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="allmovies.html">All Movies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- მთლიანი კონტეინერი , იწყება სერჩით -->
+    <div class="container">
+        <div class="search">
+            <input type="text" placeholder="Search Movie...">
+            <button>Search</button>
+        </div>
+
+
+        <span class="most_popular">Popular Movies</span>
+
+        <!-- კონტეინერი სლაიდშოუსთვის -->
+        <div class="slideshow-container">
+
+
+            <!-- სლაიდის სურათების სტილი,ზომა, რიცხვები -->
+            <div class="mySlides fade mySld">
+                <div class="numbertext" id="slideIdex"></div>
+                <img class="imgSld" src="" id="slideImage">
+            </div>
+
+            <!-- შემდეგ და წინა ღილაკები -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- ტოპ რეიტინგიანი ფილმები- აქ წავშალე გაკომენტარებული რადგან იგივეა რაც ტრენდინგზე და ფეივორიტებში 
+             იყო და მარტო ჯავასკრიპტის ფაილში დატოვე ინნერში  -->
+        <div class="movies-container toprated">
+            <h1>Top rated</h1>
+            <div class="movies-grid"></div>
+        </div>
+
+        <!-- ფეივორიტ ფილმების სექცია - ... -->
+        <div class="movies-container favorites">
+            <h1></h1>
+            <div class="movies-grid">
+                <!-- <div class="card" data-id="123456">
+                        <div class="img">
+                            <img src="https://unsplash.it/500/1000" alt="">
+                        </div>
+                        <div class="info">
+                            <h2>Movie Name</h2>
+                            <div class="single-info">
+                                <span>Rate: </span>
+                                <span>10 / 10</span>
+                            </div>
+                            <div class="single-info">
+                                <span>Release Date: </span>
+                                <span>10-04-2022</span>
+                            </div>
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+
+
+        <!-- ტრენდინგ ფილმების სრული კონტეინერია მართალია ამ გვერდზე აღარ ვიყენებ რადგან ცალკე
+            all tranding movies გვერდზე ვიყენებ მაგრამ იყოს მაინც გაკომენტარებული აკეცილ დივში -->
+
+        <!-- <div class="movies-container trending">
+                <h1>Trending</h1>
+                <div class="movies-grid">
+                    <div class="card" data-id="123456">
+                        <div class="img">
+                            <img src="https://unsplash.it/500/1000" alt="">
+                        </div>
+                        <div class="info">
+                            <h2>Movie Name</h2>
+                            <div class="single-info">
+                                <span>Rate: </span>
+                                <span>10 / 10</span>
+                            </div>
+                            <div class="single-info">
+                                <span>Release Date: </span>
+                                <span>10-04-2022</span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div> -->
+    </div>
+
+
+    <!-- პოპაპ კონტეინერი ფილმის პოსტერს დაჭერისას რომ დეტალურ აღწერაზე გადავიდეს -->
+    <div class="popup-container">
+        <!-- <span class="x-icon">&#10006;</span>
+            <div class="content">
+                <div class="left">
+                    <div class="poster-img">
+                        <img src="https://unsplash.it/500/1000" alt="">
+                    </div>
+                    <div class="single-info">
+                        <span>Add to favorites:</span>
+                        <span class="heart-icon">&#9829;</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <h1>Movie Title</h1>
+                    <h3>Movie Tagline</h3>
+                    <div class="single-info-container">
+                        <div class="single-info">
+                            <span>Language:</span>
+                            <span>English</span>
+                        </div>
+                        <div class="single-info">
+                            <span>Length:</span>
+                            <span>120 minutes</span>
+                        </div>
+                        <div class="single-info">
+                            <span>Rate:</span>
+                            <span>10 / 10</span>
+                        </div>
+                        <div class="single-info">
+                            <span>Budget:</span>
+                            <span>1350000$</span>
+                        </div>
+                        <div class="single-info">
+                            <span>Release Date:</span>
+                            <span>05-07-2022</span>
+                        </div>
+                    </div>
+                    <div class="genres">
+                        <h2>Genres</h2>
+                        <ul>
+                            <li>Action</li>
+                            <li>Drama</li>
+                            <li>Romance</li>
+                        </ul>
+                    </div>
+                    <div class="overview">
+                        <h2>Overview</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere necessitatibus, quos molestiae fuga voluptatem totam odit voluptates ullam et distinctio?</p>
+                    </div>
+                    <div class="trailer">
+                        <h2>Trailer</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Kmo8NLKkfcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+
+
+
+    <!-- ფუტერი, რომელიც იდეაში ჰედში ლინკის გამოძახებით მუშაობდა მაგრამ დიზაინის ამბავში
+    ვარჩიე ჩემით მენახა ლოგოები შავი ბექგრაუნდით :) -->
+    <footer id="about" class="footer-distributed">
+        <div class="footer-left">
+            <h3>Company<span>logo</span></h3>
+            <p class="footer-links">
+                <a href="index.html" class="link-1">Home</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="allmovies.html">All Movies</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="#about">About Us</a>
+            </p>
+            <p class="footer-company-name">Movie app © 2022</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Georgia</span> Tbilisi </p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+995 555 555 555</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@company.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                MovieAppC
+            </p>
+            <div class="footer-icons">
+                <img class="footer_logos" src="src/img/facebook logo.jpg" alt="">
+                <img class="footer_logos" src="src/img/twitter.jpg" alt="">
+                <img class="footer_logos" src="src/img/github-logo.jpg" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>
